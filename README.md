@@ -33,8 +33,12 @@ Annotation, log, authentication/authorization
 - findById();
 - etc...
 
-customized query
+### customized query
 ```java
 @Query("SELECT u FROM User u WHERE u.status = 1")
 Collection<User> findAllActiveUsers();
 ```
+
+### Flyway
+- Generate table scheme
+- Keep data structure unify
