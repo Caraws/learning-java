@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS orders {
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    total_price DECIMAL(10, 2),
+}

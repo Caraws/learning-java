@@ -1,7 +1,7 @@
 package com.example.crudPractice.controller;
 
 import com.example.crudPractice.service.modal.Product;
-import com.example.crudPractice.service.modal.ProductService;
+import com.example.crudPractice.service.modal.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,22 +9,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
-public class ProductController {
+public class ProductsController {
     @Autowired
-    private ProductService productService;
+    private ProductsService productsService;
 
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
-        return productService.createProduct(product);
+        return productsService.createProduct(product);
     }
 
     @GetMapping("/{id}")
     public Product getProductDetail(@PathVariable("id") long id) {
-        return productService.getProductDetail(id);
+        return productsService.getProductDetail(id);
     }
 
     @GetMapping
     public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+        return productsService.getAllProducts();
     }
 }
